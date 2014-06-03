@@ -2,7 +2,9 @@ NAME
     Perinci::Sub::Property::result::object - Specify object data in result
 
 VERSION
-    version 0.01
+    This document describes version 0.02 of
+    Perinci::Sub::Property::result::object (from Perl distribution
+    Perinci-Sub-Property-result-object), released on 2014-06-03.
 
 SYNOPSIS
     In function Rinci metadata:
@@ -84,8 +86,8 @@ SPECIFICATION
 
     *   spec => DEFHASH
 
-        Required. Object data specification, currently follows
-        SHARYANTO::TableSpec except that the <pos> property is not used.
+        Required. Object data specification, currently follows TableDef
+        except that the <pos> property is not used.
 
     *   allow_extra_fields => BOOL (default: 0)
 

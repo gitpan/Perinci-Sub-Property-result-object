@@ -9,7 +9,7 @@ use Locale::TextDomain::UTF8 'Perinci-Sub-Property-result-object';
 use Perinci::Object::Metadata;
 use Perinci::Sub::PropertyUtil qw(declare_property);
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 declare_property(
     name => 'result/object',
@@ -83,7 +83,7 @@ Perinci::Sub::Property::result::object - Specify object data in result
 
 =head1 VERSION
 
-version 0.01
+This document describes version 0.02 of Perinci::Sub::Property::result::object (from Perl distribution Perinci-Sub-Property-result-object), released on 2014-06-03.
 
 =head1 SYNOPSIS
 
@@ -176,8 +176,8 @@ The value of the C<object> property should be a L<DefHash>. Known properties:
 
 =item * spec => DEFHASH
 
-Required. Object data specification, currently follows L<SHARYANTO::TableSpec>
-except that the <pos> property is not used.
+Required. Object data specification, currently follows L<TableDef> except that
+the <pos> property is not used.
 
 =item * allow_extra_fields => BOOL (default: 0)
 
