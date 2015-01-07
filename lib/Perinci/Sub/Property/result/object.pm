@@ -1,5 +1,8 @@
 package Perinci::Sub::Property::result::object;
 
+our $DATE = '2015-01-07'; # DATE
+our $VERSION = '0.03'; # VERSION
+
 use 5.010001;
 use strict;
 use warnings;
@@ -8,8 +11,6 @@ use warnings;
 use Locale::TextDomain::UTF8 'Perinci-Sub-Property-result-object';
 use Perinci::Object::Metadata;
 use Perinci::Sub::PropertyUtil qw(declare_property);
-
-our $VERSION = '0.02'; # VERSION
 
 declare_property(
     name => 'result/object',
@@ -33,8 +34,9 @@ declare_property(
             prio => 50,
         },
         handler => sub {
-            my ($self, %args) = @_;
-            my $obj_spec = $self->{_help_meta}{result}{object}{spec}
+            my ($self, $r) = @_;
+            my $meta = $r->{_help_meta};
+            my $obj_spec = $meta->{result}{object}{spec}
                 or return undef;
             my $text = __("Returns object/hash. Fields are as follow:");
             $text .= "\n\n";
@@ -69,7 +71,7 @@ declare_property(
 
 
 1;
-#ABSTRACT: Specify object data in result
+# ABSTRACT: Specify object data in result
 
 __END__
 
@@ -83,7 +85,7 @@ Perinci::Sub::Property::result::object - Specify object data in result
 
 =head1 VERSION
 
-This document describes version 0.02 of Perinci::Sub::Property::result::object (from Perl distribution Perinci-Sub-Property-result-object), released on 2014-06-03.
+This document describes version 0.03 of Perinci::Sub::Property::result::object (from Perl distribution Perinci-Sub-Property-result-object), released on 2015-01-07.
 
 =head1 SYNOPSIS
 
@@ -220,7 +222,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Su
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Perinci-Sub-Property-result-object>.
+Source repository is at L<https://github.com/perlancar/perl-Perinci-Sub-Property-result-object>.
 
 =head1 BUGS
 
@@ -232,11 +234,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
